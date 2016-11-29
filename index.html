@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <meta property = "og:title" content="Social sharing">
+  <meta property = "og:type" content="website">
+  <meta property = "og:url" content="">
+  <meta property = "og:image" content="images/Jellyfish.jpg">
+  <meta property = "og:description" content="Sharing my experience to all through social networks such as Facebook, Twitter etc., I hope it will help to understand the sharing user details or their experience.">
+  <meta property = "twitter:title" content="Social sharing">
+  <meta property = "twitter:site" content="website">
+  <meta property = "twitter:url" content="">
+  <meta property = "twitter:image" content="images\Jellyfish.jpg">
+  <meta property = "twitter:description" content="Sharing my experience to all through social networks such as Facebook, Twitter etc., I hope it will help to understand the sharing user details or their experience.">
+  <style>
+  body, div, p, h1, h2, ul, li{
+	margin:0px;
+	padding:0px;
+  }
+  .container{
+	width:100%;
+	margin:0 auto;
+  }
+  .sharing-div{
+	width:500px;
+	background:#fff;
+	border-radius: 5px;
+	margin:10px auto;
+	border:2px solid red;
+	height:100px;
+	padding:0px 30px;
+  }
+  a{
+	border:0px none;
+	text-decoration:none;
+	color:black;
+  }
+  ul{
+	list-style-type:none;
+  }
+  .sharing-link{
+	width:100%;
+	text-align:center;
+  }
+  .sharing-link li{
+	float:left;
+  }
+  .sharing-div a{
+	margin: 20px 0px;
+	padding: 10px 20px;
+	display:inline-block;
+  }
+  #fb_login_button span, 
+#fb_login_button iframe {.
+    width: 80px! important;
+    height: 25px! important;
+}
+  </style>
+ <script src="js/jquery.js"></script>
+ </HEAD>
+
+ <BODY>
+	<div id="fb-root"></div>
+	 <script> 					  //WP-R­A­G­E­D­E­V­-COM app
+	  window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1455936431303394',
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+	  (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "http://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+	   $('.fb-share-button').click(function(){
+	   	 FB.ui(
+		 {
+		  method: 'share',
+		  href: 'https://developers.facebook.com/docs/',
+			}, function(response){
+			if (response && !response.error_code) {
+			  alert('Posting completed.');
+			} else {
+			  alert('Error while posting.');
+			}
+		});
+	   })
+	   
+	</script>
+		
+
+  		<div class="container">
+			<div class="sharing-div">
+				<div class="fb-share-button" data-href="http://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
+			</div>
+		</div>
+ </BODY>
+</HTML>
